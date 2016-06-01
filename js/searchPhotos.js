@@ -10,7 +10,8 @@ $(document).ready(function() {
       type: "GET",
       url: googleApiUrl,
       success: function(response) {
-        console.log(response);
+        var geoLocation = response.results[0].geometry.location;
+        console.log(geoLocation);
       }
     })
   });  
