@@ -13,7 +13,5 @@ $(document).ready(function() {
         console.log(response);
       }
     })
-
-    alert(userAddress);
   });  
 });
