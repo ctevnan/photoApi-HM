@@ -13,7 +13,7 @@ $(document).ready(function() {
           var geoLoction = response.results[0].geometry.location;
           var matchApiUrl = "https://matchapi.halberdtechnologies.com/?userID=api/Database?userID={userID}";
           var matchApiParams = {
-          getAllDatabases(String baseURL, String userID){
+          method: "getAllDatabases(String baseURL, String userID){
             String url = matchApiUrl + "/database?userID=" + userID;
 
             HttpClient httpclient = new DefaultHttpClient();
@@ -26,22 +26,22 @@ $(document).ready(function() {
             try {
               response = httpclient.execute(httpget);
               //examine response status
-              Log.i("Result", response.getStatusLine().toString());
-
+              Log.i("Result", response.getStatusLine().toString());",
+          format: "json",
           lat: geoLocation.lat,
           lon: geoLocation.lng    
         }
-
+/*
         $.ajax({
           type: "GET",
           url: matchApiUrl + $.param(matchApiParams),
           success: function(response) {
             var hmPhotos = response.photos.photo;
             for(var i = 0; i < hmPhotos.length; i++) {
-              
+
             }
           }
-        })
+        })*/
       })
     }) 
   });  
