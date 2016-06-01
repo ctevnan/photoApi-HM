@@ -3,7 +3,16 @@ $(document).ready(function() {
     e.preventDefault();
     var userAddress = $("#userAddress").val();
     var googleApiUrl = "https://maps.googleapis.com/maps/api/geocode/json?";
-    googleApiUrl += ""
+    googleApiUrl += "key=AIzaSyArxjU4hlitMhuPvMSdrjhHQFq0PAJnccM";
+    googleApiUrl += "&address=" + userAddress;
+
+    $.ajax({
+      type: "GET",
+      url: googleApiUrl,
+      success: function(response) {
+        console.log(response);
+      }
+    })
 
     alert(userAddress);
   });  
