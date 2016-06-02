@@ -43,7 +43,7 @@ function buildThumbnail(photoData) {
   photoUrl += "/" + photoData.id;
   photoUrl += "_" + photoData.secret + ".jpg";
 
-  var colDiv = $("<div>")
-  .addClass("col-md-3");
   var colDiv = $("<div>").addClass("col-md-3");
+  var thumbnailDiv = $("<div>").addClass("thumbnail");
+  var photoImg = $("<img>").attr("src", photoUrl);
 }
