@@ -27,12 +27,12 @@ $(document).ready(function() {
           type: "GET",
           url: flickrApiUrl + $.param(flickrApiParams),
           success: function(response) {
-            var Photos = response.photos.photo;
-            for(var i = 0; i < Photos.length; i++) {
-
+            var localPhotos = response.photos.photo;
+            for(var i = 0; i < localPhotos.length; i++) {
+            console.log(localPhotos);
             }
           }
-        })*/
+        })
       }
     }) 
   });  
