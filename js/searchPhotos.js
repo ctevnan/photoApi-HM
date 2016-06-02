@@ -46,4 +46,14 @@ function buildThumbnail(photoData) {
   var colDiv = $("<div>").addClass("col-md-3");
   var thumbnailDiv = $("<div>").addClass("thumbnail");
   var photoImg = $("<img>").attr("src", photoUrl);
-}
+  var captionDiv = $("<div>").addClass("caption");
+  var picTitle = $("<h3>").append("photoData.title");
+
+  colDiv.append(thumbnailDiv
+    .append(photoImg)
+    .append(captionDiv
+      .append(picTitle)
+    )
+  )
+  
+    
