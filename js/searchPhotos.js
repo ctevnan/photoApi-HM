@@ -10,39 +10,30 @@ $(document).ready(function() {
         type: "GET",
         url: googleApiUrl,
         success: function(response) {
-          var geoLoction = response.results[0].geometry.location;
-          var matchApiUrl = "https://matchapi.halberdtechnologies.com/?userID=api/Database?userID={userID}";
-          var matchApiParams = {
-          method: "getAllDatabases(String baseURL, String userID){
-            String url = matchApiUrl + "/database?userID=" + userID;
-
-            HttpClient httpclient = new DefaultHttpClient();
-
-            //prep a req obj
-            HttpGet httpget = new HttpGet("matchApiUrl");
-
-            //execute req
-            HttpResponse response;
-            try {
-              response = httpclient.execute(httpget);
-              //examine response status
-              Log.i("Result", response.getStatusLine().toString());",
+          console.log(response);
+          var geoLocation = response.results[0].geometry.location;
+          console.log(geoLocation);
+          var flickrApiUrl = "https://api.flickr.com/services/rest/?";
+          var flickrApiParams = { 
+          api_key: "71583e82a6ee0e9735dcbb2cccf668fb",
+          method: "flickr.photos.search",
           format: "json",
+          nojsoncallback: 1,
           lat: geoLocation.lat,
           lon: geoLocation.lng    
         }
-/*
+
         $.ajax({
           type: "GET",
-          url: matchApiUrl + $.param(matchApiParams),
+          url: flickrApiUrl + $.param(flickrApiParams),
           success: function(response) {
-            var hmPhotos = response.photos.photo;
-            for(var i = 0; i < hmPhotos.length; i++) {
+            var Photos = response.photos.photo;
+            for(var i = 0; i < Photos.length; i++) {
 
             }
           }
         })*/
-      })
+      }
     }) 
   });  
 });
