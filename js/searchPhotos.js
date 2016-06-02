@@ -29,11 +29,21 @@ $(document).ready(function() {
           success: function(response) {
             var localPhotos = response.photos.photo;
             for(var i = 0; i < localPhotos.length; i++) {
-            console.log(localPhotos[i]);
+              buildThumbnail(localPhotos[i]);
             }
           }
-        })
+        });
       }
-    }) 
+    }); 
   });  
 });
+function buildThumbnail(photoData) {
+  var photoUrl = "https://farm" + photoData.farm;
+  photoUrl += ".staticflickr.com/" + photoData.server;
+  photoUrl += "/" + photoData.id;
+  photoUrl += "_" + photoData.secret + ".jpg";
+
+  var colDiv = $("<div>")
+  .addClass("col-md-3");
+  var colDiv = $("<div>").addClass("col-md-3");
+}
