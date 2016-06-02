@@ -29,7 +29,7 @@ $(document).ready(function() {
           success: function(response) {
             var localPhotos = response.photos.photo;
             for(var i = 0; i < localPhotos.length; i++) {
-            console.log(localPhotos);
+            console.log(localPhotos[i]);
             }
           }
         })
