@@ -10,9 +10,9 @@ $(document).ready(function() {
         type: "GET",
         url: googleApiUrl,
         success: function(response) {
-          console.log(response);
+          //console.log(response);
           var geoLocation = response.results[0].geometry.location;
-          console.log(geoLocation);
+          //console.log(geoLocation);
           var flickrApiUrl = "https://api.flickr.com/services/rest/?";
           var flickrApiParams = { 
           api_key: "71583e82a6ee0e9735dcbb2cccf668fb",
